@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mvcapp.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('employee/save',save_or_update_employee),
-    path('employee/list',list_employees),
-    path('welcome',welcome_page),
+    path('employee/save', save_or_update_employee),
+    path('employee/list', list_employees),
+    path('', welcome_page),
     path('employee/edit/<int:eid>', edit_employee),
     path('employee/delete/<int:eid>', delete_employee),
 ]

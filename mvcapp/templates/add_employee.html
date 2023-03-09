@@ -8,7 +8,7 @@
 
             <h1>Employee Registration Form </h1> <br><br>
 
-            <a href="/welcome">HOME</a> <br><br>
+            <a href="/">HOME</a> <br><br>
             {{result}} <br><br>
             <form action="/employee/save" method="post">
                 {% csrf_token %}
@@ -17,10 +17,18 @@
                 Employee Name : <input type="text" name="ename" value="{{emprecord.name}}"> <br><br>
                 Employee Email : <input type="text" name="eemail" value="{{emprecord.email}}"> <br><br>
                 Employee Salary : <input type="text" name="esalary" value="{{emprecord.salary}}" > <br><br>
-                Employee City : <input type="text" name="ecity" value="{{emprecord.city}}" > <br><br>
+                Employee City : <select id = "ecity" name="ecity">
+                                <option value="Pune">Pune</option>
+                                <option value="Bangalore">Bangalore</option>
+                                <option value="Chennai">Chennai</option>
+                                </select> <br><br>
                 Employee State : <input type="text" name="estate" value="{{emprecord.state}}" > <br><br>
                 Employee Pincode : <input type="text" name="epincode" value="{{emprecord.pincode}}"> <br><br>
-                Employee Role : <input type="text" name="erole" value="{{emprecord.role}}"> <br><br>
+                Employee Role : <select id="erole" name="erole" >
+                                <option value="SSE">Senior Software Engineer</option>
+                                <option value="JSE">Junior Software Engineer</option>
+                                <option value="Test">Tester</option>
+                                </select> <br><br>
                 <input type="submit" > <br><br>
             </form>
 </body>

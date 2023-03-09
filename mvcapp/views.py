@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from mvcapp.models import Employee
-#function madhe --> function based views.. --> every view function must have one default param--> which is request
+
+
+# function madhe --> function based views.. --> every view function must have one default param--> which is request
 
 
 def save_or_update_employee(request):
     message = ''
     if request.method == 'POST':
-        formdata = request.POST     #request.form
+        formdata = request.POST  # request.form
         empid = formdata.get('eid')
         emp = Employee(name=formdata.get('ename'),
                        email=formdata.get('eemail'),
@@ -16,31 +18,33 @@ def save_or_update_employee(request):
                        pincode=formdata.get('epincode'),
                        role=formdata.get('erole'))
 
-        if empid:
+        if empid:  # if empid is present condition
             message = "Update Operation"
             emp.id = empid
-        else:
+        else:  # empid is auto-assigned
             message = "Add Operation"
 
         emp.save()
-        message = 'Emp saved Successfully...!'
-    return render(request,'add_employee.html',{"result" : message})
+        message = 'Emp details saved Successfully...!'
+    return render(request, 'add_employee.html', {"result": message})
 
 
-def edit_employee(request,eid):
+def edit_employee(request, eid):
     empref = Employee.objects.get(id=eid)
     if empref:
         return render(request, 'add_employee.html', {"emprecord": empref})
 
 
-def delete_employee(request,eid):
+def delete_employee(request, eid):
     empref = Employee.objects.get(id=eid)
     if empref:
         empref.delete()
     return render(request, 'list_employees.html', {'emplist': Employee.objects.all()})
 
+
 def list_employees(request):
-    return render(request,'list_employees.html',{'emplist' : Employee.objects.all()})
+    return render(request, 'list_employees.html', {'emplist': Employee.objects.all()})
+
 
 def welcome_page(request):
-    return render(request,'index.html')
+    return render(request, 'index.html')
