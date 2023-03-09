@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+
+
+        <h1>List Of Emps</h1>
+<br><br>
+ <a href="/welcome">HOME</a> <br><br>
+        <table border="1">
+            <thead>
+              <th>Emp Id </th>
+             <th>Emp Name </th>
+             <th>Emp Salary </th>
+             <th>Emp Email </th>
+             <th>Emp Role </th>
+             <th>Emp Address </th>
+             <th>Action</th>
+            </thead>
+
+            <tbody>
+                  {% for emp in emplist %} <!--Jinja Template-->
+                  <tr>
+                      <td>{{emp.id}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.role}}</td>
+                    <td>{{emp.city}} | {{emp.state}} - {{emp.pincode}}  </td>
+                      <td>
+                          <a href="/employee/edit/{{emp.id}}">EDIT</a>
+                            <a href="/employee/delete/{{emp.id}}">DELETE</a>
+                      </td>
+                  </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+</body>
+</html>

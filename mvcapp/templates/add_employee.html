@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Information</title>
+</head>
+<body>
+
+            <h1>Employee Registration Form </h1> <br><br>
+
+            <a href="/welcome">HOME</a> <br><br>
+            {{result}} <br><br>
+            <form action="/employee/save" method="post">
+                {% csrf_token %}
+                <!--  Employee(id=0,name='',email='',salary=0,city='',state='',pincode='',role='') -->
+                Employee Id : <input type="text" name="eid" value="{{emprecord.id}}" readonly> <br><br>
+                Employee Name : <input type="text" name="ename" value="{{emprecord.name}}"> <br><br>
+                Employee Email : <input type="text" name="eemail" value="{{emprecord.email}}"> <br><br>
+                Employee Salary : <input type="text" name="esalary" value="{{emprecord.salary}}" > <br><br>
+                Employee City : <input type="text" name="ecity" value="{{emprecord.city}}" > <br><br>
+                Employee State : <input type="text" name="estate" value="{{emprecord.state}}" > <br><br>
+                Employee Pincode : <input type="text" name="epincode" value="{{emprecord.pincode}}"> <br><br>
+                Employee Role : <input type="text" name="erole" value="{{emprecord.role}}"> <br><br>
+                <input type="submit" > <br><br>
+            </form>
+</body>
+</html>
