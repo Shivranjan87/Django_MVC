@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-*9u$e8mh+pln#rel7lsf*mgpki!5jqj1y00n-gh^2m3@gs9z%g
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -72,33 +70,31 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecom.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {        #primary db
-        'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'django_basics_mvc',
-        'PORT' : 3306,
-        'USER' : 'root',
-        'PASSWORD' : 'Shub1234',
-        'HOST' : 'localhost'
+    'default': {  # primary db
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_basics_mvc',
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': 'Shub1234',
+        'HOST': 'localhost'
     },
-    'sqlt' : {      #secondary db
+    'sqlt': {  # secondary db
         'ENGINE': 'django.db.backends.sqlite3',
-         'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'msql': {        #primary db
-        'ENGINE' : 'django.db.backends.mysql',
-        'NAME' : 'django_basics_db1',
-        'PORT' : 3306,
-        'USER' : 'root',
-        'PASSWORD' : 'Shub1234',
-        'HOST' : 'localhost'
+    'msql': {  # primary db
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_basics_db1',
+        'PORT': 3306,
+        'USER': 'root',
+        'PASSWORD': 'Shub1234',
+        'HOST': 'localhost'
     },
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -118,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -129,7 +124,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
