@@ -1,3 +1,5 @@
+# The model is referring to multiple base model where the attributes of base class are shared among inherited class
+# and object of base class along with the inherited class has its object created
 from django.db import models
 
 
